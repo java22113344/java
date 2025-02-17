@@ -1,50 +1,113 @@
 import java.util.Scanner;
+
 public class MatrixMultiplication {
- public static void main(String[] args) {
+
+public static void main(String[] args) {
+
  Scanner scanner = new Scanner(System.in);
- System.out.print("Enter the number of rows and columns of the first matrix: ");
+
+ // Step 1: Input dimensions for the matrices
+
+ System.out.print("Enter number of rows for matrix 1: ");
+
  int rows1 = scanner.nextInt();
+
+ System.out.print("Enter number of columns for matrix 1: ");
+
  int cols1 = scanner.nextInt();
- System.out.print("Enter the number of rows and columns of the second matrix: ");
+
+ System.out.print("Enter number of rows for matrix 2: ");
+
  int rows2 = scanner.nextInt();
+
+ System.out.print("Enter number of columns for matrix 2: ");
+
  int cols2 = scanner.nextInt();
+
+ // Step 2: Check if multiplication is possible
+
  if (cols1 != rows2) {
- System.out.println("Error: Number of columns of the first matrix must be equal to the number 
-of rows of the second matrix.");
+
+ System.out.println("Matrix multiplication is not possible due to incompatible 
+
+dimensions.");
+
  return;
+
  }
-int[][] matrix1 = new int[rows1][cols1];
+
+// Step 3: Input the elements of both matrices
+
+ int[][] matrix1 = new int[rows1][cols1];
+
  int[][] matrix2 = new int[rows2][cols2];
- int[][] result = new int[rows1][cols2];
- // Input values for matrix1
- System.out.println("Enter the elements of the first matrix:");
+
+ System.out.println("Enter elements for matrix 1:");
+
  for (int i = 0; i < rows1; i++) {
+
  for (int j = 0; j < cols1; j++) {
+
  matrix1[i][j] = scanner.nextInt();
+
  }
+
  }
- // Input values for matrix2
- System.out.println("Enter the elements of the second matrix:");
+
+ System.out.println("Enter elements for matrix 2:");
+
  for (int i = 0; i < rows2; i++) {
+
  for (int j = 0; j < cols2; j++) {
+
  matrix2[i][j] = scanner.nextInt();
+
  }
+
  }
- // Multiply the matrices
+
+ // Step 4: Initialize the result matrix
+
+ int[][] resultMatrix = new int[rows1][cols2];
+
+ // Step 5: Perform matrix multiplication
+
  for (int i = 0; i < rows1; i++) {
+
  for (int j = 0; j < cols2; j++) {
+
+ resultMatrix[i][j] = 0;
+
  for (int k = 0; k < cols1; k++) {
- result[i][j] += matrix1[i][k] * matrix2[k][j];
+
+ resultMatrix[i][j] += matrix1[i][k] * matrix2[k][j];
+
  }
+  }
+
  }
- }
- // Print the result
- System.out.println("Product of the matrices:");
+
+ 
+
+ // Step 6: Output the resulting matrix
+
+ System.out.println("Resulting Matrix after multiplication:");
+
  for (int i = 0; i < rows1; i++) {
+
  for (int j = 0; j < cols2; j++) {
- System.out.print(result[i][j] + " ");
+
+ System.out.print(resultMatrix[i][j] + " ");
+
  }
+
  System.out.println();
+
  }
+
+ scanner.close();
+
  }
+
 }
+
