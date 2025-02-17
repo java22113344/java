@@ -1,30 +1,56 @@
 import java.util.Random;
-public class RandomNumberRange {
+
+import java.util.Scanner;
+
+public class RandomNumberGenerator {
+
  public static void main(String[] args) {
- // Define the range limits
- int lowerLimit = 1;
- int upperLimit = 100;
- 
- // Create a Random object
+
+ Scanner scanner = new Scanner(System.in);
+ // Step 1: Get the lower and upper limits from the user
+
+ System.out.print("Enter the lower limit: ");
+
+ int lower = scanner.nextInt();
+
+ System.out.print("Enter the upper limit: ");
+
+ int upper = scanner.nextInt();
+
+ // Step 2: Create a Random object to generate random numbers
+
  Random random = new Random();
- 
- // Generate a random number between the lower and upper limits (inclusive)
- int randomNumber = random.nextInt(upperLimit - lowerLimit + 1) + lowerLimit;
- 
- // Print the generated random number
+
+ // Step 3: Generate a random number between the lower and upper limits (inclusive)
+
+ int randomNumber = random.nextInt(upper - lower + 1) + lower;
+
+ // Step 4: Print a message based on the generated value
+
  System.out.println("Generated Random Number: " + randomNumber);
+
  
- // Check and print messages based on the value of the random number
- if (randomNumber >= 1 && randomNumber <= 20) {
- System.out.println("The number is between 1 and 20.");
- } else if (randomNumber >= 21 && randomNumber <= 40) {
- System.out.println("The number is between 21 and 40.");
- } else if (randomNumber >= 41 && randomNumber <= 60) {
- System.out.println("The number is between 41 and 60.");
- } else if (randomNumber >= 61 && randomNumber <= 80) {
- System.out.println("The number is between 61 and 80.");
+
+ if (randomNumber < (lower + upper) / 3) {
+
+ System.out.println("The value is too low.");
+
+ } else if (randomNumber >= (lower + upper) / 3 && randomNumber <= 2 * (lower + 
+
+upper) / 3) {
+
+ System.out.println("The value is within the expected range.");
+
  } else {
- System.out.println("The number is between 81 and 100.");
-}
+
+ System.out.println("The value is too high.");
+
  }
+
+ // Step 5: End the program
+
+ scanner.close();
+
+ }
+
 }
