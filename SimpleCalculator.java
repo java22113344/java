@@ -4,7 +4,7 @@ import java.awt.event.*;
  
 public class SimpleCalculator extends JFrame implements ActionListener { 
  
-    // Components 
+
     private JTextField textField; 
     private double firstOperand = 0; 
     private double secondOperand = 0; 
@@ -14,24 +14,24 @@ public class SimpleCalculator extends JFrame implements ActionListener {
     private boolean isNewInput = true; 
  
     public SimpleCalculator() { 
-        // Frame setup 
+      
         setTitle("My Calculator"); 
         setSize(400, 500); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         setLayout(new BorderLayout()); 
  
-        // Text field for display 
+      
         textField = new JTextField(); 
         textField.setHorizontalAlignment(JTextField.RIGHT); 
         textField.setEditable(false); 
         textField.setFont(new Font("Arial", Font.BOLD, 24)); 
         add(textField, BorderLayout.NORTH); 
  
-        // Buttons panel 
+        
         JPanel buttonPanel = new JPanel(); 
         buttonPanel.setLayout(new GridLayout(4, 4, 5, 5)); 
  
-        // Buttons for digits and operations 
+      
         String[] buttons = { 
             "7", "8", "9", "+", 
             "4", "5", "6", "-", 
