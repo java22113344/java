@@ -18,8 +18,7 @@ public static void main(String[] args) {
  
    
         if (cols1 != rows2) { 
-            System.out.println("Matrix multiplication is not possible due to incompatible 
-dimensions."); 
+            System.out.println("Matrix multiplication is not possible due to incompatible dimensions."); 
             return; 
         } 
  
