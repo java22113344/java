@@ -39,7 +39,7 @@ public class SimpleFontChanger extends JFrame {
       
         applyButton.addActionListener(new ActionListener() { 
             @Override 
-            public void actionPerformed(ActionEvent e) {xx 
+            public void actionPerformed(ActionEvent e) {
                 String text = textField.getText(); 
                 int fontSize = Integer.parseInt((String) sizeCombo.getSelectedItem()); 
                 int fontStyle = Font.PLAIN; 
