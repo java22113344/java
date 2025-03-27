@@ -3,18 +3,17 @@ import java.util.Scanner;
  
 public class FileInfo { 
     public static void main(String[] args) { 
-        // Create a Scanner to get user input 
+
         Scanner scanner = new Scanner(System.in); 
  
  
-        // Prompt the user to enter the file name or path 
         System.out.print("Enter the file name or path: "); 
         String fileName = scanner.nextLine(); 
  
-        // Create a File object 
+       
         File file = new File(fileName); 
  
-        // Display file information 
+   
         System.out.println("\nFile Information:"); 
         if (file.exists()) { 
             System.out.println("File exists: Yes"); 
@@ -25,8 +24,7 @@ public class FileInfo {
         } else { 
             System.out.println("File exists: No"); 
         } 
- 
-        // Close the scanner 
+
         scanner.close(); 
     } 
 } 
