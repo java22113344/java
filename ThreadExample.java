@@ -16,11 +16,11 @@ class NumberPrinter implements Runnable {
  
 public class ThreadExample { 
     public static void main(String[] args) { 
-        // Create threads 
+     
         Thread thread1 = new Thread(new NumberPrinter(1, 10), "Thread1"); 
         Thread thread2 = new Thread(new NumberPrinter(90, 100), "Thread2"); 
  
-        // Start threads 
+   
         thread1.start(); 
         thread2.start(); 
     } 
