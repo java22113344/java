@@ -4,7 +4,7 @@ public class MatrixMultiplication {
 public static void main(String[] args) { 
         Scanner scanner = new Scanner(System.in); 
  
-        // Step 1: Input dimensions for the matrices 
+
         System.out.print("Enter number of rows for matrix 1: "); 
         int rows1 = scanner.nextInt(); 
         System.out.print("Enter number of columns for matrix 1: "); 
@@ -16,14 +16,13 @@ public static void main(String[] args) {
         System.out.print("Enter number of columns for matrix 2: "); 
         int cols2 = scanner.nextInt(); 
  
-        // Step 2: Check if multiplication is possible 
+   
         if (cols1 != rows2) { 
             System.out.println("Matrix multiplication is not possible due to incompatible 
 dimensions."); 
             return; 
         } 
  
- // Step 3: Input the elements of both matrices 
         int[][] matrix1 = new int[rows1][cols1]; 
         int[][] matrix2 = new int[rows2][cols2]; 
  
@@ -41,10 +40,9 @@ dimensions.");
             } 
         } 
  
-        // Step 4: Initialize the result matrix 
+      
         int[][] resultMatrix = new int[rows1][cols2]; 
  
-        // Step 5: Perform matrix multiplication 
         for (int i = 0; i < rows1; i++) { 
             for (int j = 0; j < cols2; j++) { 
                 resultMatrix[i][j] = 0; 
@@ -55,7 +53,7 @@ dimensions.");
             } 
         } 
       
-  // Step 6: Output the resulting matrix 
+ 
         System.out.println("Resulting Matrix after multiplication:"); 
         for (int i = 0; i < rows1; i++) { 
             for (int j = 0; j < cols2; j++) { 
