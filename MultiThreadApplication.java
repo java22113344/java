@@ -12,11 +12,11 @@ class SharedData {
             evenReady = true; 
  
             oddReady = false; 
-            notifyAll(); // Notify the square calculator 
+            notifyAll(); 
         } else { 
             oddReady = true; 
             evenReady = false; 
-            notifyAll(); // Notify the cube calculator 
+            notifyAll(); 
         } 
     } 
  
@@ -55,11 +55,11 @@ class RandomNumberGenerator extends Thread {
     public void run() { 
         Random random = new Random(); 
         while (true) { 
-            int num = random.nextInt(100); // Generate random number between 0 and 99 
+            int num = random.nextInt(100);
             System.out.println("Generated: " + num); 
             sharedData.setNumber(num); 
             try { 
-                Thread.sleep(1000); // Sleep for 1 second 
+                Thread.sleep(1000);
             } catch (InterruptedException e) { 
                 Thread.currentThread().interrupt(); 
             } 
